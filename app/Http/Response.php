@@ -23,7 +23,7 @@ class Response {
 
         /**
         * Conteúdo da resposta
-        * @var mixed
+        * @var mixed string|array
         */
         private $content;
 
@@ -75,7 +75,7 @@ class Response {
         public function sendResponse() {
             $this->sendHeaders();
             switch ($this->contentType) {
-                default:
+                case 'text/html':
                     echo $this->content;
                     break;
                 case 'application/json':

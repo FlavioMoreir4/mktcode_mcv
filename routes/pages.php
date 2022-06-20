@@ -10,7 +10,7 @@ $obRouter->get('/', [
 
 $obRouter->get('/test', [
     function(){
-        return new Response(200, Pages\Home::getHome());
+        return new Response(200, Pages\Modulo::getHome());
     }
 ]);
 

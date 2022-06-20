@@ -26,15 +26,14 @@ class View {
      * @param array $data
      * @return
      */
-    public static function render($view, $data = []) {
+    public static function render($view, $vars = []) {
         $contentView = self::getContentView($view);
-        $data = array_merge(self::$vars, $data);
-
+        $vars = array_merge(self::$vars, $vars);
         $keys = array_map(function($key){
             return '{{' . $key . '}}';
-        }, array_keys($data));
+        }, array_keys($vars));
+        $values = array_values($vars);
         
-        $values = array_values($data);
         return str_replace($keys, $values, $contentView);
     }
 

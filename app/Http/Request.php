@@ -16,13 +16,13 @@ class Request {
     private $uri;
 
     /**
-     * Dados da requisição (query string)
+     * Dados da requisição ($_GET)
      * @var array
      */
     private $queryParans = [];
 
     /**
-     * Dados da requisição (body)
+     * Dados da requisição ($_POST)
      * @var array
      */
     private $postVars = [];
@@ -64,24 +64,9 @@ class Request {
      */
     public function getUri(): string {
         return $this->uri;
+        dd($this->uri);
     }
-
-    /**
-     * Retorna os dados da requisição (query string)
-     * @return array
-     */
-    public function getQueryParans(): array {
-        return $this->queryParans;
-    }
-
-    /**
-     * Retorna os dados da requisição (body)
-     * @return array
-     */
-    public function getPostVars(): array {
-        return $this->postVars;
-    }
-
+    
     /**
      * Retorna os cabeçalhos da requisição
      * @return array
@@ -89,4 +74,21 @@ class Request {
     public function getHeaders(): array {
         return $this->headers;
     }
+
+    /**
+     * Retorna os dados da requisição ($_GET)
+     * @return array
+     */
+    public function getQueryParans(): array {
+        return $this->queryParans;
+    }
+
+    /**
+     * Retorna os dados da requisição ($_POST)
+     * @return array
+     */
+    public function getPostVars(): array {
+        return $this->postVars;
+    }
+
 }
