@@ -1,0 +1,10 @@
+// Main page wrapper
+#wrapper {
+  #content-wrapper {
+    background-color: $gray-900-alt;
+  }
+}
+
+:root {
+  --plyr-color-main: #{$primary-alt} !important;
+}

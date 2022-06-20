@@ -1,0 +1,172 @@
+// Sidebar
+.sidebar {
+    .nav-item {
+        .collapse,
+        .collapsing {
+            .collapse-inner {
+                
+                .collapse-header {
+                    color: $gray-500-alt;
+                }
+                
+                .collapse-item {
+                    color: $gray-900-alt;
+                    &:hover {
+                        background-color: $gray-200-alt;
+                    }
+
+                    &:active {
+                        background-color: $gray-300-alt;
+                    }
+                    
+                    &.active {
+                        color: $primary-alt;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar-card {
+        color: fade-out($white-alt, 0.2);
+        background-color: fade-out($black-alt, 0.9);
+        p {
+            color: fade-out($white-alt, 0.5);
+        }
+    }
+}
+
+
+// Sidebar Color Variants
+
+// Sidebar Light
+.sidebar-light {
+    .sidebar-brand {
+        color: $gray-700-alt;
+    }
+
+    hr.sidebar-divider {
+        border-top: 1px solid $gray-200-alt;
+    }
+
+    .sidebar-heading {
+        color: $gray-500-alt;
+    }
+
+    .nav-item {
+        .nav-link {
+            color: $gray-600-alt;
+
+            i {
+                color: $gray-400-alt;
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                color: $gray-700-alt;
+
+                i {
+                    color: $gray-700-alt;
+                }
+            }
+
+            // Accordion
+            &[data-toggle="collapse"]::after {
+                color: $gray-500-alt;
+            }
+        }
+
+        &.active {
+            .nav-link {
+                color: $gray-700-alt;
+
+                i {
+                    color: $gray-700-alt;
+                }
+            }
+        }
+    }
+
+    // Color the sidebar toggler
+    #sidebarToggle {
+        background-color: $gray-200-alt;
+
+        &::after {
+            color: $gray-500-alt;
+        }
+
+        &:hover {
+            background-color: $gray-300-alt;
+        }
+    }
+}
+
+// Sidebar Dark
+.sidebar-dark {
+    .sidebar-brand {
+        color: $white-alt;
+    }
+
+    hr.sidebar-divider {
+        border-top: 1px solid fade-out($white-alt, 0.85);
+    }
+
+    .sidebar-heading {
+        color: fade-out($white-alt, 0.6);
+    }
+
+    .nav-item {
+        .nav-link {
+            color: fade-out($white-alt, 0.2);
+
+            i {
+                color: fade-out($white-alt, 0.7);
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                color: $white-alt;
+
+                i {
+                    color: $white-alt;
+                }
+            }
+
+            // Accordion
+            &[data-toggle="collapse"]::after {
+                color: fade-out($white-alt, 0.5);
+            }
+        }
+
+        &.active {
+            .nav-link {
+                color: $white-alt;
+
+                i {
+                    color: $white-alt;
+                }
+            }
+        }
+    }
+
+    // Color the sidebar toggler
+    #sidebarToggle {
+        background-color: fade-out($white-alt, 0.8);
+
+        &::after {
+            color: fade-out($white-alt, 0.5);
+        }
+
+        &:hover {
+            background-color: fade-out($white-alt, 0.75);
+        }
+    }
+
+    &.toggled {
+        #sidebarToggle::after {
+            color: fade-out($white-alt, 0.5);
+        }
+    }
+}

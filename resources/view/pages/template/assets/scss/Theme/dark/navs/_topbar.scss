@@ -1,0 +1,70 @@
+// Topbar
+.topbar {
+  #sidebarToggleTop {
+    &:hover {
+      background-color: $gray-900-alt;
+    }
+    &:active {
+      background-color: $gray-800-alt;
+    }
+  }
+  .topbar-divider {
+    border-right: 1px solid $border-color;
+  }
+  .dropdown-list {
+    .dropdown-header {
+      background-color: $primary-alt;
+      border: 1px solid $primary-alt;
+      color: $white-alt;
+    }
+    .dropdown-item {
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      .dropdown-list-image {
+        .status-indicator {
+          background-color: $gray-200-alt;
+          border: .125rem solid $white-alt;
+        }
+      }
+      .text-truncate {
+      &:active {
+        background-color: $gray-200-alt;
+        color: $gray-900-alt;
+      }
+    }
+  }
+}
+
+.topbar.navbar-dark {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: fade-out($white-alt, 0.2);
+        &:hover {
+          color: $white-alt;
+        }
+        &:active {
+          color: $white-alt;
+        }
+      }
+    }
+  }
+}
+
+.topbar.navbar-light {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: $gray-400-alt;
+        &:hover {
+          color: $gray-500-alt;
+        }
+        &:active {
+          color: $gray-600-alt;
+        }
+      }
+    }
+  }
+}
+}

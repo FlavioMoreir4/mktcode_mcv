@@ -1,0 +1,72 @@
+// Import Custom SB Admin 2 Variables (Overrides Default Bootstrap Variables)
+@import "variables.scss";
+
+// Import Bootstrap
+@import "../Bootstrap/bootstrap.scss";
+// Import Custom SB Admin 2 Mixins and Components
+@import "mixins.scss";
+@import "global.scss";
+@import "utilities.scss";
+
+// Custom Components
+@import "dropdowns.scss";
+@import "navs.scss";
+@import "buttons.scss";
+@import "cards.scss";
+@import "charts.scss";
+@import "login.scss";
+@import "error.scss";
+@import "footer.scss";
+
+//Dark Configuration
+$enable-colors-hack: true;
+@import "dark/functions";
+@import "variables-alt";
+@import "dark/mixins-2";
+@import "dark/root-alts";
+@import "dark/utilities";
+@import "dark/patch";
+
+@include color-scheme-alt("html.dark") {
+    //Dark Layout & components
+    @import "dark/root";
+    @import "dark/reboot";
+    @import "dark/global";
+    @import "dark/type";
+    @import "dark/images";
+    @import "dark/tables";
+    @import "dark/forms";
+    // @import "dark/buttons";
+    @import "dark/buttons-2";
+    @import "dark/dropdown";
+    @import "dark/button-group";
+    @import "dark/nav";
+    @import "dark/navbar";
+    @import "dark/card";
+    @import "dark/accordion";
+    @import "dark/breadcrumb";
+    @import "dark/pagination";
+    @import "dark/badge";
+    @import "dark/alert";
+    @import "dark/progress";
+    @import "dark/list-group";
+    @import "dark/close";
+    @import "dark/toasts";
+    @import "dark/modal";
+    @import "dark/tooltip";
+    @import "dark/popover";
+    @import "dark/carousel";
+    @import "dark/offcanvas";
+    @import "dark/placeholders";
+    @import "dark/navs";
+
+    // Helpers
+    @import "dark/helpers";
+
+    // Utilities
+    @import "dark/utilities/api";
+
+    // Unique to dark-mode
+    @import "dark/dark";
+}
+
