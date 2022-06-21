@@ -3,6 +3,13 @@
 namespace App\Http;
 
 class Request {
+
+    /**
+    * Instancia do Router
+    * @var Router
+    */
+    private $router;
+
     /**
      * Método HTTP da requisição
      * @var string
@@ -19,7 +26,7 @@ class Request {
      * Dados da requisição ($_GET)
      * @var array
      */
-    private $queryParans = [];
+    private $queryParams = [];
 
     /**
      * Dados da requisição ($_POST)
@@ -34,26 +41,46 @@ class Request {
     private $headers = [];
 
     /**
-     * Construtor da classe
-     * @param string $httpMethod
-     * @param string $uri
-     * @param array $queryParans
-     * @param array $postVars
-     * @param array $headers
-     * @return void
-     */
-    public function __construct() {
-        $this->queryParans  = $_GET ?? [];
+    * Construtor da classe
+    * @param string $httpMethod
+    * @param string $uri
+    * @param array $queryParams
+    * @param array $postVars
+    * @param array $headers
+    * @return void
+    */
+    public function __construct($router) {
+        $this->router = $router;
+        $this->queryParams  = $_GET ?? [];
         $this->postVars     = $_POST ?? [];
         $this->headers      = getallheaders();
         $this->httpMethod   = $_SERVER['REQUEST_METHOD'] ?? '';
         $this->uri          = $_SERVER['REQUEST_URI'] ?? '';
+        $this->setUri();
     }
 
     /**
-     * Retorna o método HTTP da requisição
-     * @return string
-     */
+    * Método que define a URI da requisição
+    * @param string $uri
+    * @return void
+    */
+    private function setUri() {
+        $xUri = explode('?', $_SERVER['REQUEST_URI'] ?? '');
+        $this->uri = $xUri[0];
+    }
+
+    /**
+    * Método que retorna istancia do objeto Router
+    * @return Router
+    */
+    public function getRouter() {
+        return $this->router;
+    }
+
+    /**
+    * Retorna o método HTTP da requisição
+    * @return string
+    */
     public function getHttpMethod(): string {
         return $this->httpMethod;
     }
@@ -79,8 +106,8 @@ class Request {
      * Retorna os dados da requisição ($_GET)
      * @return array
      */
-    public function getQueryParans(): array {
-        return $this->queryParans;
+    public function getqueryParams(): array {
+        return $this->queryParams;
     }
 
     /**

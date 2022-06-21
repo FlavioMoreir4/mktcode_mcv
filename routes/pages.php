@@ -8,14 +8,20 @@ $obRouter->get('/', [
     }
 ]);
 
-$obRouter->get('/test', [
+$obRouter->get('/modulo', [
     function(){
         return new Response(200, Pages\Modulo::getHome());
     }
 ]);
 
-$obRouter->get('/pagina/{id}', [
-    function($id){
-        return new Response(200, 'Pagina ' . $id);
+$obRouter->get('/depoimentos', [
+    function($request){
+        return new Response(200, Pages\Depoimentos::getHome($request));
+    }
+]);
+
+$obRouter->POST('/depoimentos', [
+    function($request){
+        return new Response(200, Pages\Depoimentos::insertDepoimento($request));
     }
 ]);

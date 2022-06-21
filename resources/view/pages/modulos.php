@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h5 class="fw-bold text-primary card-title">Matemática</h5>
                     <h6 class="text-muted card-subtitle mb-2">Subtitle</h6><a class="stretched-link"
-                        href="{{URL}}/test"></a>
+                        href="{{URL}}/modulo"></a>
                 </div>
             </div>
         </div><!-- End: Card Módulo -->
